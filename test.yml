@@ -1,0 +1,21 @@
+# key:value
+#obj
+key2:value2
+name: |
+  hello world
+  my name is abdulla
+  and i can write multi line string in yml
+  config file
+
+arr:[1,2] #array form
+app: key:value
+     array:[1,2,3] #array
+     array2: #array
+      - 1
+      - 2
+      - 3
+     array3:
+     - key1:value1
+       keyone:valueone
+     - key2:value2
+
