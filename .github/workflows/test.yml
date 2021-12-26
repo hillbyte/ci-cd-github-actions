@@ -1,8 +1,10 @@
 name: My first github actions
 on: [push]
 jobs:
-  build-app:
+  buildApp:
     runs-on: ubuntu-latest
+    outputs:
+      text: ${{steps.finised.outputs.text}} # data shareing with others job
     env:
       VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
       VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
@@ -26,10 +28,13 @@ jobs:
       - name: Deploying the project
         run: yarn deploy
       - name: Setup finish
-        run: echo "awesome"
+        id: finished
+        run: echo "::set-output name=text::hello-world-from-build-job" # dependent data sharing
   test-app:
-    needs: build-app
+    needs: buildApp #dependent job
     runs-on: ubuntu-latest
+    env:
+      JOB_OUTPUT: ${{needs.buildApp.outputs.text}} # accessing others job data
     steps:
-      - run: echo "testing step"
+      - run: echo $JOB_OUTPUT
     #   - run: node -v
