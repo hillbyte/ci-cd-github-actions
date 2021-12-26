@@ -6,8 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-          with:
-            node-version:'14.17.0'
+        with: node-version:'14.17.0'
       - name: Install node modules
         run: yarn
       - name: Build the project
@@ -15,5 +14,4 @@ jobs:
       - name: Setup finish
         run: echo "awesome"
 
-   #   - run: node -v
-      
+    #   - run: node -v
