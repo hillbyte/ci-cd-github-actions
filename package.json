@@ -12,11 +12,11 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-  
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy":"vc build --prod --confirm --token=pP9pVVg8OAw9merMBXfTcifj"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "vercel": "^23.1.2"
   }
 }
