@@ -27,5 +27,9 @@ jobs:
         run: yarn deploy
       - name: Setup finish
         run: echo "awesome"
-
+  test-app:
+    needs:build-app
+    runs-on: ubuntu-latest
+    steps:
+      -run: echo "testing step"
     #   - run: node -v
