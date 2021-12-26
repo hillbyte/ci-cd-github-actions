@@ -28,7 +28,7 @@ jobs:
       - name: Deploying the project
         run: yarn deploy
       - name: Setup finish
-        id: finished
+        id: finised
         run: echo "::set-output name=text::hello-world-from-build-job" # dependent data sharing
   test-app:
     needs: buildApp #dependent job
